@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Lama Bot | Legal & Information</title>
+    <title>Lama Bot | Official Website</title>
 
-    <meta name="description" content="Official legal and information page for Lama Bot.">
+    <meta name="description"
+          content="Official website of Lama Bot, an all-in-one Discord bot for moderation, security, economy, leveling, tickets and more.">
 
     <style>
+
         * {
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -21,14 +27,22 @@
             line-height: 1.6;
         }
 
+        /* =========================
+           NAVIGATION
+        ========================= */
+
         header {
-            background: #171a23;
+            background: rgba(15, 17, 23, 0.92);
             border-bottom: 1px solid #292d3a;
-            padding: 22px;
+            padding: 18px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(12px);
         }
 
         nav {
-            max-width: 1000px;
+            max-width: 1150px;
             margin: auto;
             display: flex;
             align-items: center;
@@ -43,146 +57,474 @@
         }
 
         .logo span {
-            color: #9b6dff;
+            color: #d946ef;
         }
 
         nav a {
             color: #b9bdc9;
             text-decoration: none;
-            margin-left: 18px;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: 0.2s;
         }
 
         nav a:hover {
-            color: white;
+            color: #e879f9;
         }
 
-        main {
-            max-width: 1000px;
-            margin: auto;
-            padding: 80px 24px;
-        }
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
-            text-align: center;
-            padding: 60px 20px 70px;
+            position: relative;
+            min-height: 680px;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(7, 8, 15, 0.18),
+                    rgba(7, 8, 15, 0.02)
+                ),
+                url("lama-banner.png");
+
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid #292d3a;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 200px;
+
+            background: linear-gradient(
+                transparent,
+                #0f1117
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            width: 1150px;
+            max-width: 100%;
+
+            margin: auto;
+            padding: 80px 30px;
+        }
+
+        .hero-text {
+            max-width: 570px;
+
+            background: rgba(8, 9, 18, 0.35);
+            backdrop-filter: blur(5px);
+
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 20px;
+
+            padding: 32px;
         }
 
         .badge {
             display: inline-block;
-            background: rgba(155, 109, 255, 0.12);
-            border: 1px solid rgba(155, 109, 255, 0.35);
-            color: #b99cff;
+
+            background: rgba(217, 70, 239, 0.14);
+            border: 1px solid rgba(232, 121, 249, 0.4);
+
+            color: #f0abfc;
+
             padding: 7px 14px;
+
             border-radius: 20px;
+
             font-size: 13px;
             font-weight: 700;
             letter-spacing: 0.5px;
         }
 
         h1 {
-            font-size: 54px;
             color: white;
-            margin: 20px 0 12px;
+
+            font-size: 58px;
+            line-height: 1.05;
+
+            margin: 16px 0 10px;
         }
 
-        .subtitle {
-            max-width: 700px;
-            margin: auto;
+        .hero-text p {
+            color: #e5e7eb;
             font-size: 18px;
-            color: #aeb3c0;
         }
+
+        .hero-buttons {
+            margin-top: 25px;
+
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .button {
+            display: inline-block;
+
+            background: linear-gradient(
+                135deg,
+                #9333ea,
+                #d946ef
+            );
+
+            color: white;
+
+            text-decoration: none;
+            font-weight: 700;
+
+            padding: 12px 20px;
+
+            border-radius: 9px;
+
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.12);
+        }
+
+        .button-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding: 50px 24px 90px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            color: white;
+
+            font-size: 34px;
+
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #969baa;
+        }
+
+        /* =========================
+           LEGAL CARDS
+        ========================= */
 
         .cards {
             display: grid;
+
             grid-template-columns: repeat(2, 1fr);
+
             gap: 24px;
-            margin-top: 30px;
         }
 
         .card {
             background: #171a23;
+
             border: 1px solid #292d3a;
-            border-radius: 14px;
+
+            border-radius: 16px;
+
             padding: 30px;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+
+            transition: 0.25s;
         }
 
         .card:hover {
-            transform: translateY(-4px);
-            border-color: #5d4a91;
+            transform: translateY(-5px);
+
+            border-color: #9333ea;
+
+            box-shadow:
+                0 15px 40px rgba(147, 51, 234, 0.12);
         }
 
         .icon {
             font-size: 34px;
-            margin-bottom: 12px;
         }
 
         .card h2 {
             color: white;
-            margin: 0 0 10px;
-            font-size: 24px;
+
+            margin: 12px 0 8px;
         }
 
         .card p {
             color: #aeb3c0;
-            margin-bottom: 24px;
         }
 
-        .button {
-            display: inline-block;
-            background: #8b5cf6;
-            color: white;
-            text-decoration: none;
-            font-weight: 700;
-            padding: 11px 18px;
-            border-radius: 8px;
-        }
-
-        .button:hover {
-            background: #9b6dff;
-        }
+        /* =========================
+           ABOUT
+        ========================= */
 
         .about {
-            margin-top: 70px;
-            background: #171a23;
-            border: 1px solid #292d3a;
-            border-radius: 14px;
-            padding: 35px;
+            margin-top: 100px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 50px;
+
+            align-items: center;
         }
 
-        .about h2 {
-            color: white;
-            margin-top: 0;
+        .about-image {
+            width: 100%;
+
+            display: block;
+
+            border-radius: 22px;
+
+            border: 1px solid #382b4e;
+
+            box-shadow:
+                0 25px 70px rgba(168, 85, 247, 0.18);
         }
+
+        .about-content h2 {
+            color: white;
+
+            font-size: 36px;
+
+            margin: 15px 0;
+        }
+
+        .about-content p {
+            color: #aeb3c0;
+        }
+
+        /* =========================
+           FEATURES
+        ========================= */
+
+        .feature-list {
+            margin-top: 22px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 10px;
+        }
+
+        .feature {
+            background: #171a23;
+
+            border: 1px solid #292d3a;
+
+            padding: 11px 13px;
+
+            border-radius: 8px;
+
+            font-size: 14px;
+
+            transition: 0.2s;
+        }
+
+        .feature:hover {
+            border-color: #9333ea;
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           DISCORD SERVER
+        ========================= */
+
+        .discord-section {
+            margin-top: 100px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 350px;
+
+            gap: 60px;
+
+            align-items: center;
+
+            background:
+                radial-gradient(
+                    circle at right,
+                    rgba(88, 101, 242, 0.18),
+                    transparent 55%
+                ),
+                #171a23;
+
+            border: 1px solid #292d3a;
+
+            border-radius: 20px;
+
+            padding: 45px;
+
+            overflow: hidden;
+        }
+
+        .discord-info h2 {
+            color: white;
+
+            font-size: 36px;
+
+            margin: 15px 0;
+        }
+
+        .discord-info p {
+            color: #aeb3c0;
+        }
+
+        .discord-features {
+            margin-top: 25px;
+
+            display: grid;
+
+            gap: 10px;
+        }
+
+        .discord-feature {
+            background: rgba(255, 255, 255, 0.04);
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+
+            border-radius: 8px;
+
+            padding: 11px 14px;
+        }
+
+        .discord-widget {
+            display: flex;
+            justify-content: center;
+        }
+
+        .discord-widget iframe {
+            display: block;
+
+            width: 350px;
+            max-width: 100%;
+
+            height: 500px;
+
+            border-radius: 14px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
 
         .contact {
-            margin-top: 50px;
+            margin-top: 100px;
+
             text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    rgba(147, 51, 234, 0.17),
+                    transparent 60%
+                ),
+                #171a23;
+
+            border: 1px solid #292d3a;
+
+            border-radius: 18px;
+
+            padding: 45px 25px;
         }
 
         .contact h2 {
             color: white;
+
+            font-size: 30px;
+
+            margin-top: 0;
         }
 
         a {
-            color: #a98cff;
+            color: #e879f9;
         }
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             text-align: center;
+
             border-top: 1px solid #292d3a;
+
             padding: 35px 20px;
+
             color: #777c89;
-            margin-top: 80px;
         }
 
-        @media (max-width: 700px) {
-            h1 {
-                font-size: 38px;
+        footer strong {
+            color: #c7c9d1;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .hero {
+                min-height: 600px;
+                background-position: 65% center;
             }
 
-            .cards {
+            .about {
                 grid-template-columns: 1fr;
+            }
+
+            .discord-section {
+                grid-template-columns: 1fr;
+
+                padding: 30px;
+            }
+
+            .discord-widget {
+                margin-top: 15px;
+            }
+
+        }
+
+        @media (max-width: 650px) {
+
+            header {
+                padding: 14px 18px;
             }
 
             nav {
@@ -192,107 +534,408 @@
 
             nav a {
                 margin-left: 0;
-                margin-right: 15px;
+                margin-right: 14px;
             }
+
+            .hero {
+                min-height: 560px;
+                background-position: 68% center;
+            }
+
+            .hero-content {
+                padding: 50px 18px;
+            }
+
+            .hero-text {
+                padding: 22px;
+            }
+
+            h1 {
+                font-size: 39px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+
+            .discord-section {
+                padding: 22px;
+            }
+
+            .discord-info h2 {
+                font-size: 30px;
+            }
+
+            .discord-widget iframe {
+                width: 100%;
+            }
+
         }
+
     </style>
 </head>
 
+
 <body>
 
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
 <header>
+
     <nav>
-        <div class="logo">🦙 <span>Lama Bot</span></div>
+
+        <div class="logo">
+            🦙 <span>Lama Bot</span>
+        </div>
 
         <div>
-            <a href="index.html">Home</a>
-            <a href="terms.html">Terms</a>
-            <a href="privacy.html">Privacy</a>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#community">
+                Community
+            </a>
+
+            <a href="terms.html">
+                Terms
+            </a>
+
+            <a href="privacy.html">
+                Privacy
+            </a>
+
         </div>
+
     </nav>
+
 </header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-text">
+
+            <span class="badge">
+                🦙 OFFICIAL LAMA BOT
+            </span>
+
+            <h1>
+                One Bot.<br>
+                Everything you need.
+            </h1>
+
+            <p>
+                A powerful all-in-one Discord bot built for
+                moderation, security, economy, leveling,
+                tickets, community management and more.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    class="button"
+                    href="#about">
+                    Discover Lama
+                </a>
+
+                <a
+                    class="button button-secondary"
+                    href="#community">
+                    Join Community
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MAIN
+========================= -->
 
 <main>
 
-    <section class="hero">
-        <span class="badge">OFFICIAL LAMA BOT</span>
 
-        <h1>🦙 Lama Bot</h1>
+    <!-- LEGAL -->
 
-        <p class="subtitle">
-            Official legal and information center for Lama Bot.
-            Find our Terms of Service, Privacy Policy and project information here.
-        </p>
-    </section>
+    <section>
 
-    <section class="cards">
+        <div class="section-title">
 
-        <div class="card">
-            <div class="icon">📜</div>
-
-            <h2>Terms of Service</h2>
+            <h2>
+                Legal & Transparency
+            </h2>
 
             <p>
-                Read the rules and conditions that apply when using Lama Bot,
-                including Beta Testing, Early Access, Economy, AI features and
-                server administration.
+                Everything you need to know about using Lama Bot.
             </p>
 
-            <a class="button" href="terms.html">
-                View Terms
-            </a>
         </div>
 
-        <div class="card">
-            <div class="icon">🔒</div>
 
-            <h2>Privacy Policy</h2>
+        <div class="cards">
+
+
+            <!-- TERMS -->
+
+            <div class="card">
+
+                <div class="icon">
+                    📜
+                </div>
+
+                <h2>
+                    Terms of Service
+                </h2>
+
+                <p>
+                    Rules and conditions for using Lama Bot,
+                    including Beta Testing, Early Access,
+                    Economy, AI features and server administration.
+                </p>
+
+                <a
+                    class="button"
+                    href="terms.html">
+                    View Terms
+                </a>
+
+            </div>
+
+
+            <!-- PRIVACY -->
+
+            <div class="card">
+
+                <div class="icon">
+                    🔒
+                </div>
+
+                <h2>
+                    Privacy Policy
+                </h2>
+
+                <p>
+                    Learn what information Lama Bot may process,
+                    why it is processed, how long it may be stored
+                    and what privacy rights are available.
+                </p>
+
+                <a
+                    class="button"
+                    href="privacy.html">
+                    View Privacy
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section
+        class="about"
+        id="about">
+
+
+        <div>
+
+            <img
+                class="about-image"
+                src="lama-logo.png"
+                alt="Lama Bot mascot">
+
+        </div>
+
+
+        <div class="about-content">
+
+            <span class="badge">
+                BUILT FOR DISCORD
+            </span>
+
+            <h2>
+                Meet Lama Bot 🦙
+            </h2>
 
             <p>
-                Learn what information Lama Bot may process, how it is used,
-                how long it may be stored and how you can request access or deletion.
+                Lama Bot is an independent all-in-one Discord bot
+                designed to make managing communities easier,
+                safer and more powerful.
             </p>
 
-            <a class="button" href="privacy.html">
-                View Privacy Policy
-            </a>
+            <p>
+                Instead of filling your server with countless bots,
+                Lama combines important server systems into one
+                modular platform.
+            </p>
+
+
+            <div class="feature-list">
+
+                <div class="feature">
+                    🛡️ Moderation
+                </div>
+
+                <div class="feature">
+                    🔐 Security
+                </div>
+
+                <div class="feature">
+                    🎫 Tickets
+                </div>
+
+                <div class="feature">
+                    💰 Economy
+                </div>
+
+                <div class="feature">
+                    ⭐ Leveling
+                </div>
+
+                <div class="feature">
+                    🤖 AI Features
+                </div>
+
+                <div class="feature">
+                    📊 Statistics
+                </div>
+
+                <div class="feature">
+                    ⚙️ Administration
+                </div>
+
+            </div>
+
         </div>
 
     </section>
 
-    <section class="about">
 
-        <h2>About Lama Bot</h2>
+    <!-- =========================
+         DISCORD COMMUNITY
+    ========================= -->
 
-        <p>
-            Lama Bot is an independent all-in-one Discord bot designed to help
-            communities manage, protect and grow their servers.
-        </p>
+    <section
+        class="discord-section"
+        id="community">
 
-        <p>
-            The project includes systems for moderation, security, tickets,
-            economy, leveling, community tools, administration, statistics,
-            logging and optional AI-powered features.
-        </p>
 
-        <p>
-            Lama Bot is continuously developed and new features may be added
-            over time.
-        </p>
+        <div class="discord-info">
 
-        <p>
-            Lama Bot is not affiliated with, endorsed by, sponsored by, or
-            operated by Discord Inc.
-        </p>
+            <span class="badge">
+                💜 OFFICIAL COMMUNITY
+            </span>
+
+            <h2>
+                Join the Lama Community 🦙
+            </h2>
+
+            <p>
+                Join the official Lama Bot Discord server and
+                become part of the community.
+            </p>
+
+            <p>
+                Get support, follow development, test upcoming
+                features and help shape the future of Lama Bot.
+            </p>
+
+
+            <div class="discord-features">
+
+                <div class="discord-feature">
+                    🎫 Support & Help
+                </div>
+
+                <div class="discord-feature">
+                    🧪 Beta Testing
+                </div>
+
+                <div class="discord-feature">
+                    🚀 Early Access
+                </div>
+
+                <div class="discord-feature">
+                    🐛 Bug Reports
+                </div>
+
+                <div class="discord-feature">
+                    💡 Feature Suggestions
+                </div>
+
+                <div class="discord-feature">
+                    🦙 Lama Community
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="discord-widget">
+
+            <iframe
+                src="https://discord.com/widget?id=1544805391131738182&theme=dark"
+                width="350"
+                height="500"
+                allowtransparency="true"
+                frameborder="0"
+                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+            </iframe>
+
+        </div>
+
 
     </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
 
     <section class="contact">
 
-        <h2>Need Help?</h2>
+        <span class="badge">
+            SUPPORT
+        </span>
+
+        <h2>
+            Need Help? 🦙
+        </h2>
 
         <p>
-            For legal, privacy or support questions, contact the Lama Bot Project.
+            Questions about Lama Bot, privacy,
+            legal matters or the project?
         </p>
 
         <p>
@@ -304,17 +947,47 @@
 
     </section>
 
+
 </main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-    <p>🦙 <strong>Lama Bot Project</strong></p>
+    <p>
+        🦙 <strong>Lama Bot Project</strong>
+    </p>
 
-    <p>Privacy • Security • Transparency</p>
+    <p>
+        One Bot. Everything your Discord Server needs.
+    </p>
 
-    <p>© 2026 Lama Bot Project</p>
+    <p>
+        <a href="terms.html">
+            Terms of Service
+        </a>
+
+        &nbsp;•&nbsp;
+
+        <a href="privacy.html">
+            Privacy Policy
+        </a>
+    </p>
+
+    <p>
+        © 2026 Lama Bot Project
+    </p>
+
+    <p>
+        Lama Bot is an independent third-party Discord application
+        and is not affiliated with Discord Inc.
+    </p>
 
 </footer>
+
 
 </body>
 </html>
