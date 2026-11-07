@@ -1,0 +1,12 @@
+/* Lightly animated styling for the legal pages; terms content is intentionally unchanged. */
+body{background:radial-gradient(ellipse 67% 400px at 75% 0%,#7b248c27,transparent),#090611!important}
+.navbox{box-shadow:0 10px 45px #0002}
+.hero{position:relative;isolation:isolate}
+.hero:before{content:"";position:absolute;z-index:-1;top:-45px;right:1%;width:210px;height:210px;border-radius:50%;border:1px solid #e8b1ff32;box-shadow:0 0 0 35px #bb71ff06,0 0 0 75px #bb71ff04;pointer-events:none;animation:legal-ring 10s ease-in-out infinite alternate}
+.section{transition:border-color .25s,transform .25s,box-shadow .25s}
+.section:hover{border-color:#d6a6fe48;box-shadow:0 12px 33px #0002}
+.contact,.notice{transition:border-color .25s}
+.contact:hover,.notice:hover{border-color:#efa4ff7a}
+a:focus-visible,button:focus-visible{outline:3px solid #f5c4ff;outline-offset:3px}
+@keyframes legal-ring{to{transform:translateY(16px) rotate(9deg);opacity:.55}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
